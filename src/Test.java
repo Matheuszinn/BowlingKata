@@ -6,10 +6,17 @@ public class Test {
 
         CalculadoraPontuacaoBoliche teste = new CalculadoraPontuacaoBoliche();
 
-        teste.preencherJogo(new int[] { 1, 3, 7, 3, 10, 1, 7, 5, 2, 5, 3, 8, 2, 8, 2, 10, 9, 0 });
-
-        teste.pontuacaoDoJogo();
+        System.out.println(teste.pontuacaoDoJogo(jogoCompletoComSpareEStrike()));
 
     }
 
+    static int[] jogoCompletoComSpareEStrike(){
+
+        return new int[] {1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 1, 7, 3, 6, 4, 10, 2, 8,6};
+    }
+
+    static int[] jogoComStrike(){
+        return new int[] {0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 10, 2,3, 0,0};
+    }
+    
 }

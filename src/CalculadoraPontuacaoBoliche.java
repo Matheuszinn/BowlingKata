@@ -1,14 +1,6 @@
 public class CalculadoraPontuacaoBoliche {
 
-    /*private int[] pinosDerrubados = new int[21];
-
-    public void preencherJogo(int[] jogoPreenchido){
-        for(int i = 0; i < jogoPreenchido.length; i++){
-            pinosDerrubados[i] = jogoPreenchido[i];
-        }
-    }*/
-
-    public boolean fezStrike(int[] jogadas, int numLancamento){
+    public boolean fezStrike(int[] jogadas,int numLancamento){
         return jogadas[numLancamento] == 10;
     }
 
@@ -16,17 +8,30 @@ public class CalculadoraPontuacaoBoliche {
         return jogadas[numLancamento] + jogadas[numLancamento + 1] == 10;
     }
 
-    public int pontuacaoDoJogo(int[] jogadas){
+    public int pontuacaoDoJogo(int [] jogadas){
 
-        int potuacao = 0;
+        int pontuacao = 0;
         int numLancamento = 0;
 
-        for(int i:jogadas){
-            System.out.println(i);
+        for(int rodada = 0; rodada < 10; rodada++){
+
+            if(fezStrike(jogadas,numLancamento)){
+                pontuacao += (10 + jogadas[numLancamento + 1] + jogadas[numLancamento + 2]);
+                numLancamento++;
+
+            }else if(fezSpare(jogadas,numLancamento)){
+
+                pontuacao += (10 + jogadas[numLancamento + 2]);
+                numLancamento += 2;
+
+            }else{
+                pontuacao += (jogadas[numLancamento] + jogadas[numLancamento + 1]);
+                numLancamento += 2;
+
+            }
         }
 
-        return 0;
+        return pontuacao;
     }
-
 
 }
