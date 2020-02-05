@@ -28,7 +28,7 @@ public class BolicheTest {
 
     static int[] preencherJogoCompletoManual(){
 
-        Scanner in = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         int [] jogadas = new int[21];
         int numJogadas = 0;
@@ -38,23 +38,23 @@ public class BolicheTest {
 
             //Checks if the 10th is a spare
             if (rodadas == 10 && (jogadas[numJogadas - 1] + jogadas[numJogadas - 2] == 10)){
-                jogadas[numJogadas] = in.nextInt();
+                jogadas[numJogadas] = input.nextInt();
                 break;
             }else if(rodadas == 10 && jogadas[numJogadas - 1] == 10){ //Checks if the 10th frame is a strike
-                qntidadePinos = in.nextInt();
+                qntidadePinos = input.nextInt();
                 jogadas[numJogadas] = qntidadePinos;
                 numJogadas++;
 
-                jogadas[numJogadas] = in.nextInt();
+                jogadas[numJogadas] = input.nextInt();
                 break;
             }else if(rodadas == 10){break;} /*Breaks the loop if in the 10th frame the player
                                               didn't scored a strike/spare */
 
-            //Insert the pins quantity in each row
+            //Insert the pins quantity in each frame
 
             do{
                 System.out.printf("Rodada %d: ",rodadas + 1);
-                qntidadePinos = in.nextInt();
+                qntidadePinos = input.nextInt();
             }while(qntidadePinos < 0 || qntidadePinos >10);
 
             if(qntidadePinos == 10){
@@ -65,7 +65,7 @@ public class BolicheTest {
                 numJogadas++;
 
                 do {
-                    restoPraDez = in.nextInt();
+                    restoPraDez = input.nextInt();
                 }while (restoPraDez + qntidadePinos > 10);
 
                 jogadas[numJogadas] = restoPraDez;
