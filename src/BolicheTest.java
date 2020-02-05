@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class BolicheTest {
 
     public static void main(String[] args) {

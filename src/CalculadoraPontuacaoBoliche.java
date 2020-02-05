@@ -30,7 +30,6 @@ public class CalculadoraPontuacaoBoliche {
 
             }
         }
-
         return pontuacao;
     }
 
